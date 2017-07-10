@@ -3,6 +3,11 @@ $(document).ready( function(){
 		$(".icon-arrow-left-alt").hide();
 	});
 
+function printNews(){
+	$("p").append("Nuevas Recetas"); //Se crea función que en el parrafo muestre el texto indicado
+}
+printNews(); //Se llama a la función
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
