@@ -4,7 +4,7 @@ $(document).ready( function(){
 	});
 
 function printNews(){
-	$("p").append("Nuevas Recetas"); //Se crea función que en el parrafo muestre el texto indicado
+	$("#nueva").append("Nuevas Recetas"); //Se crea función que en el parrafo muestre el texto indicado
 }
 printNews(); //Se llama a la función
 
@@ -20,10 +20,18 @@ printNews(); //Se llama a la función
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	recipesArray.forEach(function(e){
+		// console.log (e); // Mostrando elementos
+		if (e.highlighted == true){
+			// console.log ("+1"); //Probando si pasa
+			renderRecipe(e.highlighted);
+		} 
+	})
 }
 
 /*
-* Función que se encarga de pintar UNA recetas que tenga 
+* Función que se encarga de pintar UNA 
+recetas que tenga 
 * marcado el atributo "highlighted" como TRUE
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-recipe.html"
